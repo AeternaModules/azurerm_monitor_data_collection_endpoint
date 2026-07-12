@@ -1,3 +1,7 @@
+output "monitor_data_collection_endpoints_id" {
+  description = "Map of id values across all monitor_data_collection_endpoints, keyed the same as var.monitor_data_collection_endpoints"
+  value       = { for k, v in azurerm_monitor_data_collection_endpoint.monitor_data_collection_endpoints : k => v.id }
+}
 output "monitor_data_collection_endpoints_configuration_access_endpoint" {
   description = "Map of configuration_access_endpoint values across all monitor_data_collection_endpoints, keyed the same as var.monitor_data_collection_endpoints"
   value       = { for k, v in azurerm_monitor_data_collection_endpoint.monitor_data_collection_endpoints : k => v.configuration_access_endpoint }
